@@ -67,12 +67,6 @@ ltcover2018_year <- ltcover_2018July10 %>%
   summarize(totalyr_cover = sum(YR2018, na.rm = TRUE))
 write.csv(ltcover2018_year,"ltcover2018_year.csv")
 
-# sum cover per species for multiple years
-
-ltcover2018_sppYR <- ltcover_2018July10 %>%
-  group_by(SPECIES, YR1953, YR1961, YR1970, YR1981, YR1991, YR2000, YR2009, YR2018) %>%
-  summarize(totalspp_coverYR = sum(YR1953, YR1961, YR1970, YR1981, YR1991, YR2000, YR2009, YR2018, na.rm = TRUE))
-write.csv(ltcover2018_sppYR,"ltcover2018_sppYR.csv")
 
 # split long "SPECIES" column into separate columns by species and change NA to 0. May also use "pivot wider"?
 SRER2018_spread <- spread(ltcover2018_year, SPECIES, totalyr_cover, is.na(0))
