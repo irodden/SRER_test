@@ -6,7 +6,6 @@
 library(httr)
 library(dplyr)
 library(tidyr)
-setwd("C:\\Users\\IER\\OneDrive - University of Arizona\\_Dissertation\\Analyses files\\SRER\\SRER_2018")
 
 exclosure_cover_20201130 <- read.csv(text=GET("https://raw.githubusercontent.com/irodden/SRER_test/master/exclosure_cover_20201130.csv"),
                                na.strings = c("-9999.0","NA"))
