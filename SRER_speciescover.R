@@ -9,7 +9,7 @@ library(httr)
 library(dplyr)
 library(tidyr)
 
-ltcover_2018July10 <- read.csv(file = "https://raw.githubusercontent.com/irodden/SRER_test/master/ltcover_2018July10.csv",
+ltcover_2018July10 <- read.csv(text=GET("https://raw.githubusercontent.com/irodden/SRER_test/master/ltcover_2018July10.csv"),
                    na.strings = c("-9999.0","NA"))
 
 # rename PASTTRAN column
