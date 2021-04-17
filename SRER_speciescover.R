@@ -2,18 +2,14 @@
 # 04-10-2021
 # SRER species total cover per year
 
-# add code to pull data from github online repository
-library(httr)
-
 # identify SRER species
 library(dplyr)
 library(tidyr)
 
-ltcover_2018July10 <- read.csv(text=GET("https://raw.githubusercontent.com/irodden/SRER_test/master/ltcover_2018July10.csv"),
-                   na.strings = c("-9999.0","NA"))
 
-# rename PASTTRAN column
-colnames(ltcover_2018July10)[1] <- "PASTTRAN"
+library(readr) #import URL data from github
+ltcover_2018July10 <- read_csv("https://raw.githubusercontent.com/irodden/SRER_test/master/ltcover_2018July10.csv", na = c("-9999.0","NA"))
+
 
 # sum cover per species for 1957 - 2018 in decadal intervals
 ltcover57_18_spp <- ltcover_2018July10 %>%
